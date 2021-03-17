@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>Welcome to our game!</title>
+  <link rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='madlibs.css') }}">
 </head>
 <body>
 
 <h1>Lets play!</h1>
 
-<form action="/madlib"> <--! use select for dropdown, but input for text, checkbox, radio -->
+<form action="/madlib"> #use select for dropdown, but input for text, checkbox, radio
   <div>Enter a color <input type="text" name="color"></div>
   <div>Input a noun <input type="text" name="noun"></div>
   <div>

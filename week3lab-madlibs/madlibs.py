@@ -28,18 +28,18 @@ def say_hello():
 
     return render_template("hello.html")
 
-
-@app.route('/greet')
+#With post added instead of get
+@app.route('/greet', methods=['POST'])
 def greet_person():
     """Greet user with compliment."""
 
-    player = request.args.get("person")
+    player = request.form.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliments = sample(AWESOMENESS, 3)
 
     return render_template("compliment.html",
                            person=player,
-                           compliment=compliment)
+                           compliments=compliments)
 
 
 @app.route('/game')
