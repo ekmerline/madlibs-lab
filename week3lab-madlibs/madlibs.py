@@ -1,6 +1,6 @@
 """A madlib game that compliments its users."""
 
-from random import choice
+from random import choice, sample
 
 from flask import Flask, render_template, request
 
@@ -57,12 +57,19 @@ def show_madlib():
     input_noun = request.args.get("noun")
     input_person = request.args.get("person")
     input_adjective = request.args.get("adjective")
+    check_place = request.args.getlist("place") #getlist**********
+    select_command = request.args.get("command")
+
+    selected_place = sample(check_place, 1) #had to import sample from random********
+    string_place = selected_place[0]
 
     return render_template("madlib.html",
                             color=input_color,
                             noun=input_noun,
                             person=input_person,
-                            adjective=input_adjective)
+                            adjective=input_adjective,
+                            place=string_place,
+                            command=select_command)
 
 
 if __name__ == '__main__':

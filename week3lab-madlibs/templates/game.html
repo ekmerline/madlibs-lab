@@ -7,12 +7,28 @@
 
 <h1>Lets play!</h1>
 
-<form action="/madlib">
+<form action="/madlib"> <--! use select for dropdown, but input for text, checkbox, radio -->
   <div>Enter a color <input type="text" name="color"></div>
   <div>Input a noun <input type="text" name="noun"></div>
+  <div>
+    Choose a place
+    <input type="checkbox" name="place" value="Brooklyn">
+    <label>Brooklyn</label>
+    <input type="checkbox" name="place" value="Mars">
+    <label>Mars</label>
+    <input type="checkbox" name="place" value="my brain">
+    <label>My Brain</label>
+  </div>
   <div>Give me a persons name <input type="text" name="person"></div>
   <div>Enter an adjective <input type="text" name="adjective"></div>
-  
+  <div>
+    Select a command
+    <select name="command">
+      <option value="go!">Go</option>
+      <option value="dance!">Dance</option>
+      <option value="STOP DROP AND ROLE!">Fire Drill</option>
+    </select>
+  </div>
   <input type="submit">
 </form>
 
